@@ -101,17 +101,17 @@ const books = [
 
 let card = "<div>"
 
-for (i=0; i < books.length ; i++){
+for (j=0; j < books.length ; j++){
 
 card += `<article>
-            <img src="${books[i].imageLink}" class="foto"></img>
-            <p><strong>Author:</strong>${books[i].author}</p>
-            <p><strong>Country:</strong>${books[i].country}</p>
-            <p><strong>Language:</strong>${books[i].language}</p>
-            <p><strong>Link:</strong>${books[i].link}</p>
-            <p><strong>Pages:</strong>${books[i].pages}</p>
-            <p><strong>Title:</strong>${books[i].title}</p>
-            <p><strong>Year:</strong>${books[i].year}</p>
+            <img src="${books[j].imageLink}" class="foto"></img>
+            <p><strong>Author:</strong>${books[j].author}</p>
+            <p><strong>Country:</strong>${books[j].country}</p>
+            <p><strong>Language:</strong>${books[j].language}</p>
+            <p><strong>Link:</strong>${books[j].link}</p>
+            <p><strong>Pages:</strong>${books[j].pages}</p>
+            <p><strong>Title:</strong>${books[j].title}</p>
+            <p><strong>Year:</strong>${books[j].year}</p>
             </article>`
     }
     card += `</div>`; 
@@ -121,33 +121,33 @@ card += `<article>
 
   
   //EJEMPLO:
+let card_ = '<div>';
+for (i=0; i < books.length ; i++){
 
+    card_ += '<article>';
   const cardTo = document.getElementById("contenedor");
-  const imageTo = document.getElementById()
 
-    card_.createElement('img');
-    //Primero creo el atributo porque todas las img han de llevarlo
-    document.createAttributeAttribute('src',`${books[i].imageLink}`)
-    document.getElementsByTagName('img')
+    //Creo el elemento img
+    cardTo.createElement('img');
+
+    //Creo el atributo src común a todas los elementos img
+    document.createAttribute('src');
+
+    //Asigno a cada src de cada img su valor
+    document.setAttribute('src', `${books[i].imageLink}`)
+
+    //Creo un elemento h5
+    cardTo.createElement('h5');
+
+    //Incluyo en el elemento h5 el nombre de la clave
     
-    (`<img class="foto" src="${books[0].imageLink}"></img>`)
-  
-  document.
-
-    card_.src = imageLink[i];
-    card_.src = imageLink[i];
-
-  child.appendChild(text); 
-  parent.appendChild(child);
+    document.createTextNode(books[i]);
+  //+++++++Tengo que utilizar esto:+++++++
+        child.appendChild(text); 
+        parent.appendChild(child);
 
 
-  let links = document.getElementsByTagName("a");
-
-for(let i = 0; i < links.length; i++){
-    console.log(links[i].innerHTML); 
-    console.log(links[i].pathname); 
-    console.log(links[i].href);  
-}caches,
+  /*
   document.getElementById("mensaje").style.color = "blue";
   const autor = 
   - innerHTML
@@ -155,3 +155,4 @@ for(let i = 0; i < links.length; i++){
   - createElement()
   - createAttribute()
   - createTextNode()
+  */
