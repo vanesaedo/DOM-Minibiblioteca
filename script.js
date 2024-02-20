@@ -1,13 +1,4 @@
-# DOM-Minibiblioteca
-Ejercicio de clase Minibiblioteca
-
-Ejercicio - Minibiblioteca JS - DOM
-Alejandro Reyes
-•
-12:37
-100 puntos
-Fecha de entrega: 22 feb, 9:00
-Ejercicio con arrays, objetos, manejo del DOM
+/*Ejercicio con arrays, objetos, manejo del DOM
 
 Dado el siguiente array de objetos, pintar en el DOM tarjetas con los detalles de los siguientes libros. 
 - Maquetación HTML + CSS. Respetar semántica HTML5
@@ -49,7 +40,7 @@ ${person.name}
 
 
 Enviar URL del repositorio con vuestra solución.
-
+*/
 const books = [
   {
     "author": "Chinua Achebe",
@@ -102,3 +93,65 @@ const books = [
     "year": -600
     
   }]
+
+  //Templates
+  //use the object properties as variables
+
+
+
+let card = "<div>"
+
+for (i=0; i < books.length ; i++){
+
+card += `<article>
+            <img src="${books[i].imageLink}" class="foto"></img>
+            <p><strong>Author:</strong>${books[i].author}</p>
+            <p><strong>Country:</strong>${books[i].country}</p>
+            <p><strong>Language:</strong>${books[i].language}</p>
+            <p><strong>Link:</strong>${books[i].link}</p>
+            <p><strong>Pages:</strong>${books[i].pages}</p>
+            <p><strong>Title:</strong>${books[i].title}</p>
+            <p><strong>Year:</strong>${books[i].year}</p>
+            </article>`
+    }
+    card += `</div>`; 
+    document.getElementById("container").innerHTML = card; 
+    //document.body.innerHTML=imageLink;      
+
+
+  
+  //EJEMPLO:
+
+  const cardTo = document.getElementById("contenedor");
+  const imageTo = document.getElementById()
+
+    card_.createElement('img');
+    //Primero creo el atributo porque todas las img han de llevarlo
+    document.createAttributeAttribute('src',`${books[i].imageLink}`)
+    document.getElementsByTagName('img')
+    
+    (`<img class="foto" src="${books[0].imageLink}"></img>`)
+  
+  document.
+
+    card_.src = imageLink[i];
+    card_.src = imageLink[i];
+
+  child.appendChild(text); 
+  parent.appendChild(child);
+
+
+  let links = document.getElementsByTagName("a");
+
+for(let i = 0; i < links.length; i++){
+    console.log(links[i].innerHTML); 
+    console.log(links[i].pathname); 
+    console.log(links[i].href);  
+}caches,
+  document.getElementById("mensaje").style.color = "blue";
+  const autor = 
+  - innerHTML
+  - appendChild()
+  - createElement()
+  - createAttribute()
+  - createTextNode()
