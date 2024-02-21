@@ -1,46 +1,4 @@
-/*Ejercicio con arrays, objetos, manejo del DOM
 
-Dado el siguiente array de objetos, pintar en el DOM tarjetas con los detalles de los siguientes libros. 
-- Maquetación HTML + CSS. Respetar semántica HTML5
-- Mobile first. Usar Flexbox para las tarjetas y media queries. 
-- Subir a GitHub el proyecto
-- Podéis implementar las dos fases en el mismo proyecto
-
-Para generar las tarjetas (Hay que hacerlo de las 2 formas):
-Fase 1
-Utilizar métodos de manejo del DOM
-    - innerHTML
-    - appendChild()
-    - createElement()
-    - createAttribute()
-    - createTextNode()
-Fase 2
-Utilizar template string
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-https://www.w3schools.com/js/js_string_templates.asp
-
-Ejemplo template string: 
-https://wesbos.com/template-strings-html
-const person = {
-name: 'Wes',
-job: 'Web Developer',
-city: 'Hamilton',
-bio: 'Wes is a really cool guy that loves to teach web development!'
-}
-// And then create our markup:
-const markup = `
-<div class="person">
-<h2>
-${person.name}
-</h2>
-<p class="location">${person.city}</p>
-<p class="bio">${person.bio}</p>
-</div>
-`;
-
-
-Enviar URL del repositorio con vuestra solución.
-*/
 const books = [
   {
     "author": "Chinua Achebe",
@@ -94,65 +52,50 @@ const books = [
     
   }]
 
-  //Templates
-  //use the object properties as variables
+
+//Parte 1
+
+//1. Decalro el lugar al que voy a añadir todo lo que creo.
 
 
+//2. Creo el bucle
+
+
+for (i=0; i < books.length ; i++){
+  let parent = document.createElement("div");
+
+  const location = document.getElementById("contenedor")
+  parent.createElement("<article>")
+  parent.createElement("<img>")
+ parent.createAttribute("src").value = books[i].imageLink
+
+}
+
+document.getElementById("conenedor") = parent;
+*/
+
+//Parte 2
 
 let card = "<div>"
 
 for (j=0; j < books.length ; j++){
 
-card += `<article>
+  card += `<article>
             <img src="${books[j].imageLink}" class="foto"></img>
-            <p><strong>Author:</strong>${books[j].author}</p>
-            <p><strong>Country:</strong>${books[j].country}</p>
-            <p><strong>Language:</strong>${books[j].language}</p>
-            <p><strong>Link:</strong>${books[j].link}</p>
-            <p><strong>Pages:</strong>${books[j].pages}</p>
+            <div id="info">
             <p><strong>Title:</strong>${books[j].title}</p>
-            <p><strong>Year:</strong>${books[j].year}</p>
-            </article>`
-    }
-    card += `</div>`; 
-    document.getElementById("container").innerHTML = card; 
-    //document.body.innerHTML=imageLink;      
-
-
-  
-  //EJEMPLO:
-let card_ = '<div>';
-for (i=0; i < books.length ; i++){
-
-    card_ += '<article>';
-  const cardTo = document.getElementById("contenedor");
-
-    //Creo el elemento img
-    cardTo.createElement('img');
-
-    //Creo el atributo src común a todas los elementos img
-    document.createAttribute('src');
-
-    //Asigno a cada src de cada img su valor
-    document.setAttribute('src', `${books[i].imageLink}`)
-
-    //Creo un elemento h5
-    cardTo.createElement('h5');
-
-    //Incluyo en el elemento h5 el nombre de la clave
+            <p><strong>Author:</strong> ${books[j].author}</p>
+            <p><strong>Country:</strong> ${books[j].country}</p>
+            <p><strong>Language:</strong> ${books[j].language}</p>
+            <p><strong>Year:</strong> ${books[j].year}</p>
+            <p><strong>Pages:</strong> ${books[j].pages}</p>
+            <a href="${books[j].link}">Más info aquí</a>
+            </div>
+            </article>
+            `
+           
+           
+}
     
-    document.createTextNode(books[i]);
-  //+++++++Tengo que utilizar esto:+++++++
-        child.appendChild(text); 
-        parent.appendChild(child);
-
-
-  /*
-  document.getElementById("mensaje").style.color = "blue";
-  const autor = 
-  - innerHTML
-  - appendChild()
-  - createElement()
-  - createAttribute()
-  - createTextNode()
-  */
+card += `</div>`; 
+document.getElementById("container").innerHTML = card; 
