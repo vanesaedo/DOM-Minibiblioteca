@@ -60,7 +60,19 @@ const books = [
 
 //2. Creo el bucle
 
+/*
+let card_ = "<div>"
+let cont = document.getElementById("contenedor")
+let im = document.createElement("img")
+let at = document.createAttribute("src")
+let val = books[0].imageLink
+at.value = val
 
+at.appendChild(im)
+im.appendChild(cont)
+card += "</div>"
+*/
+/*
 for (i=0; i < books.length ; i++){
   let parent = document.createElement("div");
 
@@ -75,7 +87,7 @@ document.getElementById("conenedor") = parent;
 */
 
 //Parte 2
-
+/*
 let card = "<div>"
 
 for (j=0; j < books.length ; j++){
@@ -96,6 +108,77 @@ for (j=0; j < books.length ; j++){
            
            
 }
-    
-card += `</div>`; 
-document.getElementById("container").innerHTML = card; 
+*/
+
+
+
+
+
+//Imagen
+
+let imag = document.createElement("img");
+let atrib = document.createAttribute("src");
+const section = document.getElementsByTagName("section")[0];
+
+let atribValue = books[0].imageLink;
+atrib.value = atribValue;
+imag.setAttributeNode(atrib);
+
+section.appendChild(imag);
+
+//Link
+let anchor = document.createElement("a");
+let href = document.createAttribute("href");
+
+
+let hrefValue = books[0].link;
+href.value = hrefValue;
+anchor.setAttributeNode(href);
+
+section.appendChild(anchor);
+
+//Autor
+let h5 = document.createAttribute("h5");
+let tituloAutor = document.createTextNode("Autor: ");
+h5.appendChild(tituloAutor);
+
+let parrAutor = document.createElement("p");
+let textoParrAutor = document.createTextNode(books[0].author);
+parrAutor.appendChild(textoParrAutor);
+
+
+//Titulo
+//Country
+//Language
+//pages
+//year
+
+
+"author": "Unknown",
+"country": "Achaemenid Empire",
+"imageLink": "images/miro_impresionista.png",
+"language": "Hebrew",
+"link": "https://en.wikipedia.org/wiki/Book_of_Job\n",
+"pages": 176,
+"title": "The Book Of Job",
+"year": -600
+/*
+
+const para = document.createElement("p");
+para.innerText = "This is a paragraph";
+document.body.appendChild(para);
+
+const para2 = document.createElement("h1");
+para2.innerText = "Author";
+document.body.appendChild(para2);
+
+const para = document.createElement("p");
+para.innerText =  "";
+document.body.appendChild(para);
+
+const node = document.createElement("img");
+const imgnode = document.createTextNode(books[0].imageLink);
+node.appendChild(imgnode);
+document.getElementById("contenedor").appendChild(node);
+
+*/a
