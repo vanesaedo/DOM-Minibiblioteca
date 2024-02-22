@@ -52,79 +52,34 @@ const books = [
     
   }]
 
-
-//Parte 1
-
-//1. Decalro el lugar al que voy a añadir todo lo que creo.
-
-
-//2. Creo el bucle
-
 /*
-let card_ = "<div>"
-let cont = document.getElementById("contenedor")
-let im = document.createElement("img")
-let at = document.createAttribute("src")
-let val = books[0].imageLink
-at.value = val
+//-------------PARTE I PRE-2015----------------------------------
 
-at.appendChild(im)
-im.appendChild(cont)
-card += "</div>"
-*/
-/*
-for (i=0; i < books.length ; i++){
-  let parent = document.createElement("div");
+//let ejemplar = document.createElement("div");
 
-  const location = document.getElementById("contenedor")
-  parent.createElement("<article>")
-  parent.createElement("<img>")
- parent.createAttribute("src").value = books[i].imageLink
+for (let i = 0; i < books.length; i++){
+//-----IMAGEN
 
-}
+//Creando las etiquetas img y el atributo vacío
 
-document.getElementById("conenedor") = parent;
-*/
-
-//Parte 2
-/*
-
-let card = "<div>"
-
-for (j=0; j < books.length ; j++){
-
-  card += `<article>
-            <img src="${books[j].imageLink}" class="foto"></img>
-            <div id="info">
-            <p><strong>Title:</strong>${books[j].title}</p>
-            <p><strong>Author:</strong> ${books[j].author}</p>
-            <p><strong>Country:</strong> ${books[j].country}</p>
-            <p><strong>Language:</strong> ${books[j].language}</p>
-            <p><strong>Year:</strong> ${books[j].year}</p>
-            <p><strong>Pages:</strong> ${books[j].pages}</p>
-            <a href="${books[j].link}">Más info aquí</a>
-            </div>
-            </article>
-            `
-           
-           
-}
-*/
-
-//Imagen
 //Creo el objeto de DOM img
 let imag = document.createElement("img");
 
 //Creo el objeto de DOM atributo src
 let atrib = document.createAttribute("src");
 
+//Pintando, al indicar dónde los voy a incluir
+
 //Indico dónde voy a incluir estos objetos, y con ello se pintan. Sin esto no se verían, existirían pero en modo virtual.
-const section = document.getElementsByTagName("section")[0];
+const section = document.getElementsByTagName("section")[i];
+
+//Creando el valor del atributo src
 
 //Ahora que están pintados creo una variable con el valor para el atributo src
-let atribValue = books[0].imageLink;
+let atribValue = books[i].imageLink;
 
-//Incluyo en el atributo src (atrib) el valor cogido, mediante la variable anterior, del objeto.
+
+//Digo dónde (atrib) introducir el valor (.value) del atributo src (atribValue).
 atrib.value = atribValue;
 
 //Introduzco y con ello pinto el atributo src ya con su valor dentro de la etiqueta img.
@@ -133,7 +88,7 @@ imag.setAttributeNode(atrib);
 //Introduzco y con ello pinto la la etiqueta imagen (imag) en el primer elemento section (const section)
 section.appendChild(imag);
 
-//Link
+//----ANCHOR
 
 //Creo el elemento de DOM etiqueta <a>
 let anchor = document.createElement("a");
@@ -141,9 +96,9 @@ let anchor = document.createElement("a");
 //Creo el elemento de DOM atributo href
 let href = document.createAttribute("href");
 
-//No necesito aludir a section porque con la vez ha sido suficiente
+//**No necesito volver a decir que lo introduzca en section, con la primera vez que he aludido a section es suficiente.
 //Almaceno el valor que cojo del objeto en la variable hrefValue
-let hrefValue = books[0].link;
+let hrefValue = books[i].link;
 
 //Incorporo el valor del atributo al atributo (nombrevarObjetoDOM.value = variable) 
 href.value = hrefValue;
@@ -158,6 +113,8 @@ anchor.appendChild(textoLink)
 
 //Incluyo el enlace a la sección
 section.appendChild(anchor);
+
+//-----AUTOR
 
 //Titulo autor 
 
@@ -175,12 +132,12 @@ section.appendChild(h5)
 //Creo el elemento del DOM
 let pAutor = document.createElement("p");
 //Almaceno el dato a incluir cogiéndolo del objeto (books[0].title)
-let dataAutor = document.createTextNode(books[0].title);
+let dataAutor = document.createTextNode(books[i].title);
 //Añado el texto al h5
 pAutor.appendChild(dataAutor);
 section.appendChild(pAutor); 
 
-//COUNTRY
+//-----COUNTRY
 
 //Titulo country
 
@@ -198,12 +155,12 @@ section.appendChild(h5Country)
 //Creo el elemento del DOM
 let pCountry = document.createElement("p");
 //Almaceno el dato a incluir cogiéndolo del objeto (books[0].title)
-let dataCountry = document.createTextNode(books[0].country);
+let dataCountry = document.createTextNode(books[i].country);
 //Añado el texto al h5
 pCountry.appendChild(dataCountry);
 section.appendChild(pCountry); 
 
-//LANGUAGE
+//-----LANGUAGE
 
 //Titulo language 
 
@@ -221,12 +178,12 @@ section.appendChild(h5Lan)
 //Creo el elemento del DOM
 let pLan = document.createElement("p");
 //Almaceno el dato a incluir cogiéndolo del objeto (books[0].title)
-let dataLan = document.createTextNode(books[0].language);
+let dataLan = document.createTextNode(books[i].language);
 //Añado el texto al h5
 pLan.appendChild(dataLan);
 section.appendChild(pLan); 
 
-//PAGES
+//----PAGES
 
 //Creo el elemento del DOM
 let h5Pag = document.createElement("h5");
@@ -242,13 +199,13 @@ section.appendChild(h5Pag)
 //Creo el elemento del DOM
 let pPag = document.createElement("p");
 //Almaceno el dato a incluir cogiéndolo del objeto (books[0].title)
-let dataPag = document.createTextNode(books[0].pages);
+let dataPag = document.createTextNode(books[i].pages);
 //Añado el texto al h5
 pPag.appendChild(dataPag);
 section.appendChild(pPag);
 
 
-//YEAR
+//-----YEAR
 
 //Creo el elemento del DOM
 let h5Year = document.createElement("h5");
@@ -262,8 +219,33 @@ section.appendChild(h5Year)
 //Creo el elemento del DOM
 let pYear = document.createElement("p");
 //Almaceno el dato a incluir cogiéndolo del objeto (books[0].title)
-let dataYear = document.createTextNode(books[0].year);
+let dataYear = document.createTextNode(books[i].year);
 //Añado el texto al h5
 pYear.appendChild(dataYear);
 section.appendChild(pYear); 
 
+}
+
+*/
+//----PARTE II - Post 2015 con Templates ---------------------------
+
+
+let card = "<div>"
+
+for (j=0; j < books.length ; j++){
+
+card += `<article>
+            <img src="${books[j].imageLink}" class="foto"></img>
+            <div>
+            <p><strong>Author:</strong>${books[j].author}</p>
+            <p><strong>Country:</strong>${books[j].country}</p>
+            <p><strong>Language:</strong>${books[j].language}</p>
+            <p><strong>Link:</strong>${books[j].link}</p>
+            <p><strong>Pages:</strong>${books[j].pages}</p>
+            <p><strong>Title:</strong>${books[j].title}</p>
+            <p><strong>Year:</strong>${books[j].year}</p>
+            </div>
+            </article>`
+    }
+    card += `</div>`; 
+    document.getElementById("container").innerHTML = card; 
